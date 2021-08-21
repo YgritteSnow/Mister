@@ -13,7 +13,7 @@ class M_2D_API UMisterPaperSpriteComponent : public UPaperSpriteComponent
 {
 	GENERATED_UCLASS_BODY()
 
-private:
+public:
 	UPROPERTY(Category = Sprite, EditAnywhere, BlueprintReadOnly, meta = (DisplayThumbnail = "true"))
 	UPaperSprite* SubSourceSprite;
 public:

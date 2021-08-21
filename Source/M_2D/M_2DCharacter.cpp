@@ -32,9 +32,9 @@ AM_2DCharacter::AM_2DCharacter()
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->TargetArmLength = 500.0f;
 	CameraBoom->SocketOffset = FVector(0.0f, 0.0f, 75.0f);
-	CameraBoom->bAbsoluteRotation = true;
+	CameraBoom->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 	CameraBoom->bDoCollisionTest = false;
-	CameraBoom->RelativeRotation = FRotator(0.0f, -90.0f, 0.0f);
+	CameraBoom->SetUsingAbsoluteRotation(true);
 	
 
 	// Create an orthographic camera (no perspective) and attach it to the boom
@@ -45,12 +45,12 @@ AM_2DCharacter::AM_2DCharacter()
 
 	TriggerHand = CreateDefaultSubobject<UBoxComponent>(TEXT("TriggerHand"));
 	TriggerHand->SetupAttachment(RootComponent);
-	TriggerHand->RelativeLocation = FVector(100.f, 0.f, 0.f);
+	TriggerHand->SetRelativeLocation(FVector(100.f, 0.f, 0.f));
 	TriggerHand->OnComponentBeginOverlap.AddDynamic(this, &AM_2DCharacter::CapsuleTouchStart);
 	TriggerHand->OnComponentEndOverlap.AddDynamic(this, &AM_2DCharacter::CapsuleTouchEnd);
 
 	// Prevent all automatic rotation behavior on the camera, character, and camera component
-	CameraBoom->bAbsoluteRotation = true;
+	CameraBoom->SetUsingAbsoluteRotation(true);
 	SideViewCameraComponent->bUsePawnControlRotation = false;
 	SideViewCameraComponent->bAutoActivate = true;
 	GetCharacterMovement()->bOrientRotationToMovement = false;

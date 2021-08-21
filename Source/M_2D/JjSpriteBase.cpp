@@ -18,7 +18,7 @@ AJjSpriteBase::AJjSpriteBase(const FObjectInitializer& ObjectInitializer)
 }
 
 #if WITH_EDITOR
-bool APaperSpriteActor::GetReferencedContentObjects(TArray<UObject*>& Objects) const
+bool AJjSpriteBase::GetReferencedContentObjects(TArray<UObject*>& Objects) const
 {
 	Super::GetReferencedContentObjects(Objects);
 

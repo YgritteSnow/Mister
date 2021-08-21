@@ -2,8 +2,13 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "MisterPaperSpriteComponent.h"
+#include "CoreMinimal.h"
+
+UMisterPaperSpriteComponent::UMisterPaperSpriteComponent(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
+{
+}
 
 void UMisterPaperSpriteComponent::UseSubSprite(bool bUseSub)
 {

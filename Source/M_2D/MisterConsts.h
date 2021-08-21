@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "PaperSpriteActor.h"
-#include "JjSpriteBase.generated.h"
+#include "MisterConsts.generated.h"
 
 /** Connection status for Concert client sessions */
 UENUM()
